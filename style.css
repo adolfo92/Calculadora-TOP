@@ -1,0 +1,16 @@
+#main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#calc-outline{
+    height: 500px;
+}
+
+#display{
+    max-height: 100px;
+    min-height: 50px;
+    background-color: thistle;
+}
