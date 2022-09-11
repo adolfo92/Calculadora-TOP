@@ -46,7 +46,7 @@
 }
 
 .last{
-    justify-content: first baseline;
+    
 }
 
 .number{
@@ -54,16 +54,28 @@
     height: 70px;
 }
 
+#blank-reset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #operator-buttons{
     display: flex;
     flex-direction: column;
     margin-top: 5px;
     justify-content: space-around;
+    align-items: ;
+    
 }
 
 .operator{
 
     width:40px;
-    height: 60px;
+    height: 40px;
 
+}
+
+#equal{
+    height: 90px;
 }
