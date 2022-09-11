@@ -21,3 +21,14 @@ function operate(a,b,operator){
     if(operator ==='/') return divide(a,b);
 
 }
+
+
+//----------------------- Events ------------------
+
+const displayScreen = document.querySelector('#display');
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => button.addEventListener('click',function(){
+    displayScreen.textContent+=button.textContent;
+}));
