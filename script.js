@@ -25,6 +25,8 @@ function operate(a,b,operator){
 
         case '/':return divide(a,b);
 
+        case `=`:
+
     }
 
 }
@@ -45,13 +47,24 @@ numButtons.forEach(button => button.addEventListener('click',function(){
 
 const operators = document.querySelectorAll(".operator");
 
-operators.forEach(function(operator){
+operators.forEach(operand => operand.addEventListener('click', function(operator) {
 
     switch(operator.textContent){
-        case 'reset': reset(); // Pendiente hacer la funcion
+
+
+        case 'reset': 
+            //reset(); // Pendiente hacer la funcion
+            break;
 
         default : 
+            const num1 = parseInt(displayScreen.textContent);
+
+            console.log(num1+typeof(num1));
+            
+
+
     }
-    
+
 })
+)
 
