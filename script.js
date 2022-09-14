@@ -22,7 +22,7 @@ function operate(a,b,operator){
         case '-':return resta(a,b);
 
         case '*':return multiplica(a,b);
-        
+
         case '/':return divide(a,b);
 
     }
@@ -32,10 +32,26 @@ function operate(a,b,operator){
 
 //----------------------- Events ------------------
 
+//          Display de numeros
 const displayScreen = document.querySelector('#display');
 
-const buttons = document.querySelectorAll("button");
+const numButtons = document.querySelectorAll(".number");
 
-buttons.forEach(button => button.addEventListener('click',function(){
+numButtons.forEach(button => button.addEventListener('click',function(){
     displayScreen.textContent+=button.textContent;
 }));
+
+//          Operaciones
+
+const operators = document.querySelectorAll(".operator");
+
+operators.forEach(function(operator){
+
+    switch(operator.textContent){
+        case 'reset': reset(); // Pendiente hacer la funcion
+
+        default : 
+    }
+    
+})
+
