@@ -15,10 +15,17 @@ function divide(a,b){
 
 function operate(a,b,operator){
 
-    if(operator ==='+') return suma(a,b);
-    if(operator ==='-') return resta(a,b);
-    if(operator ==='*') return multiplica(a,b);
-    if(operator ==='/') return divide(a,b);
+    switch(operator){
+
+        case '+':return suma(a,b);
+
+        case '-':return resta(a,b);
+
+        case '*':return multiplica(a,b);
+        
+        case '/':return divide(a,b);
+
+    }
 
 }
 
