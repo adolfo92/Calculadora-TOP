@@ -7,6 +7,10 @@ let num2 = '';
 
 let operating = false;
 
+let result ="";
+
+let actualOp = '';
+
 const displayScreen = document.querySelector('#display');
 
 const numButtons = document.querySelectorAll(".number");
@@ -25,7 +29,7 @@ numButtons.forEach(button => button.addEventListener('click',function(){
 
     if(operating){ 
         displayScreen.textContent='';
-        let operating = false;
+        operating = false;
     }
    
 
@@ -45,11 +49,12 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
         case "reset":
 
-            reset()
+            reset();
+            break;
 
         default : 
 
-            let result = getData(this.textContent);
+            result = getData(this.textContent);
             
             console.log(result);
 
@@ -93,32 +98,38 @@ function operate(a,b,operator){
 
         case '/':return divide(a,b);
 
-        case `=`:
-
     }
 
 }
 
 function getData(operator){
 
-    if (operator==='=') return num1;
 
     if (num1 === ''){
         num1 = parseInt(displayScreen.textContent);
+        actualOp = operator;
+        console.log("num1: "+num1);
+        return;
     }
 
-    else if(num2 ===''){
+    num2 = parseInt(displayScreen.textContent);
 
-    }
+    console.log("num1:"+num1+" num2:"+num2+" operator:"+actualOp);
 
-    else{
-       num1 = operate(num1,num2,operator)
+    result = operate(num1,num2,actualOp);
 
-       num2 = '';
+    displayScreen.textContent=result;
 
-       return num1;
+    num1 = result;
+    
+    actualOp=operator;
 
-    }
+    if (actualOp === "=") num1 = '';
+
+    console.log("operado");
+
+    return result;
+
     
 
 }
