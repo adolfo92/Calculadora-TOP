@@ -45,7 +45,7 @@ operators.forEach(operand => operand.addEventListener('click', function() {
     switch(this.textContent){
 
 
-        case "reset":
+        case "AC":
 
             reset();
             break;
