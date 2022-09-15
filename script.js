@@ -39,7 +39,7 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
         default : 
 
-            num1 = parseInt(displayScreen.textContent);           
+            getData(this.textContent);         
 
 
     }
@@ -83,5 +83,21 @@ function operate(a,b,operator){
         case `=`:
 
     }
+
+}
+
+function getData(operator){
+
+    if (n1 === ''){
+        n1 = 
+    }
+
+    else if(n2 ===''){}
+
+    else{
+        operate(n1,n2,operator)
+    }
+
+
 
 }
