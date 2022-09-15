@@ -7,8 +7,6 @@ let num2 = '';
 
 let operating = false;
 
-let result ="";
-
 let actualOp = '';
 
 const displayScreen = document.querySelector('#display');
@@ -54,7 +52,7 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
         default : 
 
-            result = getData(this.textContent);
+            getData(this.textContent);
 
 
     }
@@ -111,26 +109,16 @@ function getData(operator){
         return;
     }
 
-    //------------ Down here i operate the already loaded numbers ---------------
+    //Down here i operate the already loaded numbers
 
     num2 = parseInt(displayScreen.textContent);
 
-    result = operate(num1,num2,actualOp);
+    num1 = operate(num1,num2,actualOp); //Here i set num1 = result to be the new number already loaded 
 
-    displayScreen.textContent=result;
-
-    //------------ Down Here i set num1 = result to be the new number already loaded ------------
-
-    num1 = result;
-
-    //------------ I set the triggering operator as the next operator value ------------
+    displayScreen.textContent=num1;
     
-    actualOp=operator;
+    actualOp = operator; //I set the triggering operator as the next operator value
 
-    //------------ If the triggering operator is the equal sign, theres no need to store that, so i get into the first "if" next time --------------------
-
-    if (actualOp === "=") num1 = '';
-
-    return result;    
+    if (actualOp === "=") num1 = '';  //If the triggering operator is the equal sign, theres no need to store that, so i get into the first "if" next time  
 
 }
