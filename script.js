@@ -1,3 +1,51 @@
+
+//----------------------- Variable and const declaration field -----------------
+
+let num1 = '';
+
+let num2 = '';
+
+const displayScreen = document.querySelector('#display');
+
+const numButtons = document.querySelectorAll(".number");
+
+const operators = document.querySelectorAll(".operator");
+
+
+//----------------------- Events ------------------
+
+//-------------Display de numeros
+
+
+numButtons.forEach(button => button.addEventListener('click',function(){
+   
+
+    displayScreen.textContent+=button.textContent;
+    
+}));
+
+//--------------Operaciones
+
+
+operators.forEach(operand => operand.addEventListener('click', function() {   
+
+
+    switch(this.textContent){
+
+
+        case "reset":
+
+            reset()
+
+        default : 
+
+            num1 = parseInt(displayScreen.textContent);           
+
+
+    }
+
+}))
+
 //------------ Function declaration field -------------------
 
 function suma(a,b){
@@ -11,6 +59,13 @@ function multiplica(a,b){
 }
 function divide(a,b){
     return a/b;
+}
+
+function reset(){
+    num1 = '';
+    num2 = '';
+    displayScreen.textContent='';
+
 }
 
 function operate(a,b,operator){
@@ -30,41 +85,3 @@ function operate(a,b,operator){
     }
 
 }
-
-
-//----------------------- Events ------------------
-
-//          Display de numeros
-const displayScreen = document.querySelector('#display');
-
-const numButtons = document.querySelectorAll(".number");
-
-numButtons.forEach(button => button.addEventListener('click',function(){
-    displayScreen.textContent+=button.textContent;
-}));
-
-//          Operaciones
-
-const operators = document.querySelectorAll(".operator");
-
-operators.forEach(operand => operand.addEventListener('click', function(operator) {
-
-    switch(operator.textContent){
-
-
-        case 'reset': 
-            //reset(); // Pendiente hacer la funcion
-            break;
-
-        default : 
-            const num1 = parseInt(displayScreen.textContent);
-
-            console.log(num1+typeof(num1));
-            
-
-
-    }
-
-})
-)
-
