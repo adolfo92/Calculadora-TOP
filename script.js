@@ -5,11 +5,15 @@ let num1 = '';
 
 let num2 = '';
 
+let operating = false;
+
 const displayScreen = document.querySelector('#display');
 
 const numButtons = document.querySelectorAll(".number");
 
 const operators = document.querySelectorAll(".operator");
+
+
 
 
 //----------------------- Events ------------------
@@ -18,6 +22,11 @@ const operators = document.querySelectorAll(".operator");
 
 
 numButtons.forEach(button => button.addEventListener('click',function(){
+
+    if(operating){ 
+        displayScreen.textContent='';
+        let operating = false;
+    }
    
 
     displayScreen.textContent+=button.textContent;
@@ -29,6 +38,7 @@ numButtons.forEach(button => button.addEventListener('click',function(){
 
 operators.forEach(operand => operand.addEventListener('click', function() {   
 
+    operating = true;
 
     switch(this.textContent){
 
@@ -39,7 +49,9 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
         default : 
 
-            getData(this.textContent);         
+            let result = getData(this.textContent);
+            
+            console.log(result);
 
 
     }
@@ -64,6 +76,7 @@ function divide(a,b){
 function reset(){
     num1 = '';
     num2 = '';
+    operating = false;
     displayScreen.textContent='';
 
 }
@@ -88,16 +101,24 @@ function operate(a,b,operator){
 
 function getData(operator){
 
-    if (n1 === ''){
-        n1 = 
+    if (operator==='=') return num1;
+
+    if (num1 === ''){
+        num1 = parseInt(displayScreen.textContent);
     }
 
-    else if(n2 ===''){}
+    else if(num2 ===''){
+
+    }
 
     else{
-        operate(n1,n2,operator)
+       num1 = operate(num1,num2,operator)
+
+       num2 = '';
+
+       return num1;
+
     }
-
-
+    
 
 }
