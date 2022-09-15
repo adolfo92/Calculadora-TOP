@@ -55,8 +55,6 @@ operators.forEach(operand => operand.addEventListener('click', function() {
         default : 
 
             result = getData(this.textContent);
-            
-            console.log(result);
 
 
     }
@@ -75,6 +73,8 @@ function multiplica(a,b){
     return a*b;
 }
 function divide(a,b){
+
+    if(b === 0) return displayScreen.textContent ="Man wtf? don't divide by 0";
     return a/b;
 }
 
@@ -108,28 +108,29 @@ function getData(operator){
     if (num1 === ''){
         num1 = parseInt(displayScreen.textContent);
         actualOp = operator;
-        console.log("num1: "+num1);
         return;
     }
 
-    num2 = parseInt(displayScreen.textContent);
+    //------------ Down here i operate the already loaded numbers ---------------
 
-    console.log("num1:"+num1+" num2:"+num2+" operator:"+actualOp);
+    num2 = parseInt(displayScreen.textContent);
 
     result = operate(num1,num2,actualOp);
 
     displayScreen.textContent=result;
 
+    //------------ Down Here i set num1 = result to be the new number already loaded ------------
+
     num1 = result;
+
+    //------------ I set the triggering operator as the next operator value ------------
     
     actualOp=operator;
 
+    //------------ If the triggering operator is the equal sign, theres no need to store that, so i get into the first "if" next time --------------------
+
     if (actualOp === "=") num1 = '';
 
-    console.log("operado");
-
-    return result;
-
-    
+    return result;    
 
 }
