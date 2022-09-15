@@ -5,9 +5,9 @@ let num1 = '';
 
 let num2 = '';
 
-let operating = false;
-
 let actualOp = '';
+
+let operating = false;
 
 const displayScreen = document.querySelector('#display');
 
