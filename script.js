@@ -9,6 +9,8 @@ let actualOp = '';
 
 let operating = false;
 
+const allButtons = document.querySelectorAll(`button`);
+
 const displayScreen = document.querySelector('#display');
 
 const numButtons = document.querySelectorAll(".number");
@@ -58,6 +60,12 @@ operators.forEach(operand => operand.addEventListener('click', function() {
     }
 
 }))
+
+allButtons.forEach(function(button){
+    button.addEventListener('hover',#dosomething);
+    button.addEventListener('click',#dosomething);
+
+})
 
 //------------ Function declaration field -------------------
 
@@ -121,4 +129,11 @@ function getData(operator){
 
     if (actualOp === "=") num1 = '';  //If the triggering operator is the equal sign, theres no need to store that, so i get into the first "if" next time  
 
+}
+
+//--------------- Aesthetic functions --------------------
+
+function pressButton(element){
+
+    
 }
