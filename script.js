@@ -61,11 +61,24 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
 }))
 
-allButtons.forEach(function(button){
-    button.addEventListener('hover',#dosomething);
-    button.addEventListener('click',#dosomething);
+allButtons.forEach(button => {
+    button.addEventListener('mouseover',function(){
+        this.style.borderColor = 'grey';
+    });
+    button.addEventListener('mouseout',function(){
+        this.style.borderColor = 'rgb(255, 251, 215)';
+    })
+    button.addEventListener('mousedown',function(){
+        this.style.fontSize = '15px';
+    })
+    button.addEventListener('mouseup',function(){
+        this.style.fontSize = '20px';
+    })
+
 
 })
+
+    //button.addEventListener('click',#dosomething);
 
 //------------ Function declaration field -------------------
 

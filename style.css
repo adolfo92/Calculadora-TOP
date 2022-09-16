@@ -62,9 +62,8 @@ button{
 }
 
 #reset{
-
+    margin-top: 15px;
     background-color: rgb(24, 0, 160);
-    
 }
 
 .number{
