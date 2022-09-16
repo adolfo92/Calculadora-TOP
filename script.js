@@ -52,6 +52,12 @@ operators.forEach(operand => operand.addEventListener('click', function() {
             reset();
             break;
 
+        case "Del":
+            let text= Array.from(displayScreen.textContent);
+            text.pop()
+            displayScreen.textContent= text.join('');
+            break;
+
         default : 
 
             getData(this.textContent);
