@@ -68,6 +68,16 @@ button{
 
 }
 
+#delete{
+
+    background-color: rgb(27, 172, 128);
+    width: 40px ;
+    padding-right: 5px;
+    padding-left: 4px;
+    
+
+}
+
 .number{
     width: 70px;
     height: 70px;
