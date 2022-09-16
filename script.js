@@ -125,7 +125,7 @@ function getData(operator){
 
 
     if (num1 === ''){
-        num1 = parseInt(displayScreen.textContent);
+        num1 = parseFloat(displayScreen.textContent);
         actualOp = operator;
         return;
     }
@@ -136,7 +136,13 @@ function getData(operator){
 
     num1 = operate(num1,num2,actualOp); //Here i set num1 = result to be the new number already loaded 
 
-    displayScreen.textContent=num1;
+    if (!Number.isInteger(num1)){
+        displayScreen.textContent=num1.toFixed(2);
+    } else{
+        displayScreen.textContent=num1;
+    }
+
+    
     
     actualOp = operator; //I set the triggering operator as the next operator value
 
