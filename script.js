@@ -84,8 +84,6 @@ allButtons.forEach(button => {
 
 })
 
-    //button.addEventListener('click',#dosomething);
-
 //------------ Function declaration field -------------------
 
 function suma(a,b){
@@ -146,9 +144,7 @@ function getData(operator){
         displayScreen.textContent=num1.toFixed(2);
     } else{
         displayScreen.textContent=num1;
-    }
-
-    
+    }    
     
     actualOp = operator; //I set the triggering operator as the next operator value
 
