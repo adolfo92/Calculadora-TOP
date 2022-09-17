@@ -156,9 +156,3 @@ function getData(operator){
 
 }
 
-//--------------- Aesthetic functions --------------------
-
-function pressButton(element){
-
-    
-}
