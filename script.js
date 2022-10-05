@@ -54,7 +54,7 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
         case "Del":
             let text= Array.from(displayScreen.textContent);
-            text.pop()
+            text.pop();
             displayScreen.textContent= text.join('');
             break;
 
