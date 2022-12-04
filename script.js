@@ -60,7 +60,7 @@ operators.forEach(operand => operand.addEventListener('click', function() {
 
         default : 
 
-            getData(this.textContent);
+            doCalc(this.textContent);
 
 
     }
@@ -125,7 +125,7 @@ function operate(a,b,operator){
 
 }
 
-function getData(operator){
+function doCalc(operator){
 
 
     if (num1 === ''){
